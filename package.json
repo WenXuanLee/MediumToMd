@@ -1,0 +1,28 @@
+{
+  "name": "mediumtomd",
+  "version": "1.0.0",
+  "description": "convert medium format to markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WenXuanLee/MediumToMd.git"
+  },
+  "keywords": [
+    "Markdown",
+    "Medium",
+    "node.js"
+  ],
+  "author": "WenXuan Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WenXuanLee/MediumToMd/issues"
+  },
+  "homepage": "https://github.com/WenXuanLee/MediumToMd#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "request": "^2.88.0"
+  }
+}
