@@ -4,15 +4,38 @@ const request = require("request")
 const cheerio = require('cheerio');
 const Markdown = require('./markdown');
 
-const mediumArticleUrl = 'https://medium.com/@speechless0922/vue%E7%9A%84%E4%BA%8C%E4%B8%89%E4%BA%8B-render-function-2b3705e4a5bd';
+const mediumArticleUrl = 'https://medium.com/@speechless0922/review-javascript-this-%E7%B9%AB%E7%B5%90%E7%B6%81%E5%AE%9A-5b3907c9c9bc';
 
 request(mediumArticleUrl, (error, response, body) => {
   // body for cheerio
   const $ = cheerio.load(body);
 
-  /* let markdown js handle the transform logic */
+  // let markdown js handle the transform logic 
   const markdown = new Markdown($);
   markdown.showBody()
 
  
 });
+
+/* test 591 data */
+/* let page = 1 // default 1
+let locationId = 1 // taipei
+
+const test591Url = `https://newhouse.591.com.tw/home/housing/search?rid=${locationId}&sid=&page=${page}`
+const testXinYiUrl = 'https://www.sinyi.com.tw/'
+
+const testObj = {
+  url: testXinYiUrl,
+  headers: {
+    'cookie': 'laqrSPguEGRFmmC9GQfoDOZo0l0AAAAAAKGB99puPu9oIgVBzNeBlA%3D%3D'
+  }
+}
+request(testXinYiUrl, (error, response, body) => {
+  console.log(error)
+  console.log(response)
+  console.log(body)
+
+  let result = {}
+  
+
+}) */
