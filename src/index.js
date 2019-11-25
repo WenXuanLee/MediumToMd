@@ -19,7 +19,10 @@ request(mediumArticleUrl, (error, response, body) => {
   // and create markdown file
   markdown.outputResult(path.resolve('../hugo-resource/WenXuanLee/content/Posts/mediumPosts'))
 
-/*   markdown.outputResult() */
+  /* TODO
+     1. 爬個人頁面所有 post 並轉出 markdown file
+     2. 在 hugo-resource 利用 github hook & scripts 自動 build 並 deploy github page
+  */
 
  
 });

@@ -148,9 +148,7 @@ class MarkdownTransformer {
     const image = this.$(content).find('noscript').html();
     return `${removeWidthAndHeight(image)}<br/>`;
   }
-  // TODO
- 
-  // output result to a markdown file in markdown folder
+  
   // set path as parameter which default file parent folder
   outputResult(targetPath = __dirname) {
     let fileName= this.getArticleTitle()
@@ -163,11 +161,6 @@ class MarkdownTransformer {
         console.log('create success')
       }
     });
-    console.log(__dirname)
-/*     return {
-      fileName,
-      output
-    } */
   }
 }
 
