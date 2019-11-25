@@ -1,7 +1,8 @@
 +++
-title: Review Javascript — this 繫結綁定
-date: 2019-11-20
-tags: [JavaScript,Front End Development,Frontend,]
+title= "Review Javascript — this 繫結綁定"
+date= "2019-11-20"
+tags= ["JavaScript","Front End Development","Frontend",]
+categories= "mediumPosts"
 +++
 
 <img class="cp t u dn ak" src="https://miro.medium.com/max/6706/0*Tn6EoEpiHO0wWmGA" role="presentation"><br/><strong class="gm gy">this</strong> 是自動定義在每個函式 Scope 內的特殊關鍵字，但猶豫本身的命名以及使用方式容易讓人感到混淆，因此在複習 Javascript 順手整理自己關於對 <strong class="gm gy">this</strong> 觀念的釐清以及了解背後原理行為

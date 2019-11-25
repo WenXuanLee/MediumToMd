@@ -2,7 +2,7 @@ const reconvertUnicode = require("./util");
 const fs = require('fs');
 const path = require('path');
 
-class Markdown {
+class MarkdownTransformer {
   constructor($) {
     this.$ = $;
   }
@@ -55,7 +55,7 @@ class Markdown {
     tagKeys.forEach(key => {
       const targetDom = tags.eq(key);
       if (isTag(targetDom)) {
-        result += `${targetDom.text()},`;
+        result += `"${targetDom.text()}",`;
       }
     });
     result += "]";
@@ -64,9 +64,10 @@ class Markdown {
 
   getMarkdownHeader() {
     let result = "+++\n";
-    result += `title: ${this.getArticleTitle()}\n`;
-    result += `date: ${this.getArticleDate()}\n`;
-    result += `tags: ${this.getArticleTags()}\n`;
+    result += `title= "${this.getArticleTitle()}"\n`;
+    result += `date= "${this.getArticleDate()}"\n`;
+    result += `tags= ${this.getArticleTags()}\n`;
+    result += `categories= "mediumPosts"\n`;
     result += "+++\n\n";
     return result;
   }
@@ -150,10 +151,12 @@ class Markdown {
   // TODO
  
   // output result to a markdown file in markdown folder
-  showBody() {
+  // set path as parameter which default file parent folder
+  outputResult(targetPath = __dirname) {
     let fileName= this.getArticleTitle()
     let output = this.getMarkdownHeader() + this.getArticleContent()
-    fs.writeFile(`${__dirname}/markdown/${fileName}.md`, output, (err) => {
+
+    fs.writeFile(`${targetPath}/${fileName}.md`, output, (err) => {
       if(err) {
         console.log(err)
       } else {
@@ -161,7 +164,11 @@ class Markdown {
       }
     });
     console.log(__dirname)
+/*     return {
+      fileName,
+      output
+    } */
   }
 }
 
-module.exports = Markdown;
+module.exports = MarkdownTransformer;
